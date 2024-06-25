@@ -1,0 +1,800 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Order.MainPage"
+             Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="15">
+            <Label Padding ="0,20,0,0" Text="Hello and Welcome!" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Text="Place your order" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Text="Snacks" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Grid RowSpacing="10" ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    
+                </Grid.ColumnDefinitions>
+                <BoxView Opacity="0.2" Grid.Row="0" Grid.Column="0" CornerRadius="10" />
+                
+                <BoxView Opacity="0.2" Grid.Row="1" Grid.Column="0" CornerRadius="10"/>
+                
+                <BoxView Opacity="0.2" Grid.Row="2" Grid.Column="0" CornerRadius="10"/>
+                <BoxView Opacity="0.2" Grid.Row="3" Grid.Column="0" CornerRadius="10"/>
+                
+                
+
+                <Grid Grid.Row="0" Grid.Column="0" Padding="10,10,10,10" ColumnSpacing="10">
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="Item1Name" Text="Pizza" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16"/>
+
+                    <Frame Grid.Row="1" Grid.Column="0" HasShadow="False" MaximumHeightRequest="120" MaximumWidthRequest="200" Padding="0" CornerRadius="10" IsClippedToBounds="True" HorizontalOptions="Start">
+                        <Image Source="pizza.jpg" HeightRequest="120"  Aspect="AspectFill" HorizontalOptions="Start" />
+                    </Frame>
+                    
+                    
+
+                    <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+                        
+
+                        <Grid Padding="0,5,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="*" />
+                                
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Price:" Grid.Column="0" />
+                            <Label x:Name="Item1Price" Text="3 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                            
+                        </Grid>
+
+                        <Grid  Padding="0,10,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" Grid.ColumnSpan="3" CornerRadius="5"/>
+                            <Label Grid.Column="0" Text="Quantity:" />
+                            <Button x:Name="Item1Dec" Text="-" TextColor="White" Padding="0" Grid.Column="1" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="Start" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Subtract_Item" />
+                            <Label x:Name="Item1Quantity" Text="0" Grid.Column="2" HorizontalOptions="Center"/>
+                            <Button x:Name="Item1Inc" Text="+" TextColor="White" Padding="0" Grid.Column="3" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Add_Item"/>
+                        </Grid>
+                        <Grid Padding="0, 10, 0, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Total:" Grid.Column="0"/>
+                            <Label x:Name="Item1Total" Text="0 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                        </Grid>
+                        
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="0" Padding="10,10,10,10" ColumnSpacing="10">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="Item2Name" Text="Burger" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16"/>
+
+
+                    <Frame Grid.Row="1" Grid.Column="0" HasShadow="False" MaximumHeightRequest="120" MaximumWidthRequest="200" Padding="0" CornerRadius="10" IsClippedToBounds="True" HorizontalOptions="Start">
+                        <Image Source="burger.jpg" HeightRequest="120"  Aspect="AspectFill" HorizontalOptions="Start" />
+                    </Frame>
+                    
+                    
+
+                    <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+
+
+                        <Grid Padding="0,5,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="*" />
+
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Price:" Grid.Column="0" />
+                            <Label x:Name="Item2Price" Text="2 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+
+                        </Grid>
+
+                        <Grid  Padding="0,10,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" Grid.ColumnSpan="3" CornerRadius="5"/>
+                            <Label Grid.Column="0" Text="Quantity:" />
+                            <Button x:Name="Item2Dec" Text="-" TextColor="White" Padding="0" Grid.Column="1" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="Start" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Subtract_Item" />
+                            <Label x:Name="Item2Quantity" Text="0" Grid.Column="2" HorizontalOptions="Center"/>
+                            <Button x:Name="Item2Inc" Text="+" TextColor="White" Padding="0" Grid.Column="3" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Add_Item"/>
+                        </Grid>
+                        <Grid Padding="0, 10, 0, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Total:" Grid.Column="0"/>
+                            <Label x:Name="Item2Total" Text="0 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="0" Padding="10,10,10,10" ColumnSpacing="10">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="Item3Name" Text="Fries" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16"/>
+
+                    <Frame Grid.Row="1" Grid.Column="0" HasShadow="False" MaximumHeightRequest="120" MaximumWidthRequest="200" Padding="0" CornerRadius="10" IsClippedToBounds="True" HorizontalOptions="Start">
+                        <Image Source="fries.jpg" HeightRequest="120"  Aspect="AspectFill" HorizontalOptions="Start" />
+                    </Frame>
+
+                    <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+
+
+                        <Grid Padding="0,5,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="*" />
+
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Price:" Grid.Column="0" />
+                            <Label x:Name="Item3Price" Text="2 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+
+                        </Grid>
+
+                        <Grid  Padding="0,10,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" Grid.ColumnSpan="3" CornerRadius="5"/>
+                            <Label Grid.Column="0" Text="Quantity:" />
+                            <Button x:Name="Item3Dec" Text="-" TextColor="White" Padding="0" Grid.Column="1" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="Start" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Subtract_Item" />
+                            <Label x:Name="Item3Quantity" Text="0" Grid.Column="2" HorizontalOptions="Center"/>
+                            <Button x:Name="Item3Inc" Text="+" TextColor="White" Padding="0" Grid.Column="3" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Add_Item"/>
+                        </Grid>
+                        <Grid Padding="0, 10, 0, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Total:" Grid.Column="0"/>
+                            <Label x:Name="Item3Total" Text="0 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Grid Grid.Row="3" Grid.Column="0" Padding="10,10,10,10" ColumnSpacing="10">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="Item4Name" Text="Hotdog" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16"/>
+
+                    <Frame Grid.Row="1" Grid.Column="0" HasShadow="False" MaximumHeightRequest="120" MaximumWidthRequest="200" Padding="0" CornerRadius="10" IsClippedToBounds="True" HorizontalOptions="Start">
+                        <Image Source="hotdog.jpg" HeightRequest="120"  Aspect="AspectFill" HorizontalOptions="Start" />
+                    </Frame>
+
+                    <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+
+
+                        <Grid Padding="0,5,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="*" />
+
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Price:" Grid.Column="0" />
+                            <Label x:Name="Item4Price" Text="4 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+
+                        </Grid>
+
+                        <Grid  Padding="0,10,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" Grid.ColumnSpan="3" CornerRadius="5"/>
+                            <Label Grid.Column="0" Text="Quantity:" />
+                            <Button x:Name="Item4Dec" Text="-" TextColor="White" Padding="0" Grid.Column="1" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="Start" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Subtract_Item" />
+                            <Label x:Name="Item4Quantity" Text="0" Grid.Column="2" HorizontalOptions="Center"/>
+                            <Button x:Name="Item4Inc" Text="+" TextColor="White" Padding="0" Grid.Column="3" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Add_Item"/>
+                        </Grid>
+                        <Grid Padding="0, 10, 0, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Total:" Grid.Column="0"/>
+                            <Label x:Name="Item4Total" Text="0 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Grid>
+            </Grid>
+
+            <Label Text="Beverages" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Grid RowSpacing="10" ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+
+                </Grid.ColumnDefinitions>
+                <BoxView Opacity="0.2" Grid.Row="0" Grid.Column="0" CornerRadius="10" />
+
+                <BoxView Opacity="0.2" Grid.Row="1" Grid.Column="0" CornerRadius="10"/>
+
+                <BoxView Opacity="0.2" Grid.Row="2" Grid.Column="0" CornerRadius="10"/>
+                <BoxView Opacity="0.2" Grid.Row="3" Grid.Column="0" CornerRadius="10"/>
+
+
+
+                <Grid Grid.Row="0" Grid.Column="0" Padding="10,10,10,10" ColumnSpacing="10">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="Item5Name" Text="Coffee" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16"/>
+
+                    <Frame Grid.Row="1" Grid.Column="0" HasShadow="False" MaximumHeightRequest="120" MaximumWidthRequest="200" Padding="0" CornerRadius="10" IsClippedToBounds="True" HorizontalOptions="Start">
+                        <Image Source="coffee.jpg" HeightRequest="120"  Aspect="AspectFill" HorizontalOptions="Start" />
+                    </Frame>
+
+
+
+                    <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+
+
+                        <Grid Padding="0,5,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="*" />
+
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Price:" Grid.Column="0" />
+                            <Label x:Name="Item5Price" Text="2 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+
+                        </Grid>
+
+                        <Grid  Padding="0,10,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" Grid.ColumnSpan="3" CornerRadius="5"/>
+                            <Label Grid.Column="0" Text="Quantity:" />
+                            <Button x:Name="Item5Dec" Text="-" TextColor="White" Padding="0" Grid.Column="1" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="Start" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Subtract_Item" />
+                            <Label x:Name="Item5Quantity" Text="0" Grid.Column="2" HorizontalOptions="Center"/>
+                            <Button x:Name="Item5Inc" Text="+" TextColor="White" Padding="0" Grid.Column="3" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Add_Item"/>
+                        </Grid>
+                        <Grid Padding="0, 10, 0, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Total:" Grid.Column="0"/>
+                            <Label x:Name="Item5Total" Text="0 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="0" Padding="10,10,10,10" ColumnSpacing="10">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="Item6Name" Text="Tea" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16"/>
+
+
+                    <Frame Grid.Row="1" Grid.Column="0" HasShadow="False" MaximumHeightRequest="120" MaximumWidthRequest="200" Padding="0" CornerRadius="10" IsClippedToBounds="True" HorizontalOptions="Start">
+                        <Image Source="tea.jpg" HeightRequest="120"  Aspect="AspectFill" HorizontalOptions="Start" />
+                    </Frame>
+
+
+
+                    <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+
+
+                        <Grid Padding="0,5,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="*" />
+
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Price:" Grid.Column="0" />
+                            <Label x:Name="Item6Price" Text="2 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+
+                        </Grid>
+
+                        <Grid  Padding="0,10,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" Grid.ColumnSpan="3" CornerRadius="5"/>
+                            <Label Grid.Column="0" Text="Quantity:" />
+                            <Button x:Name="Item6Dec" Text="-" TextColor="White" Padding="0" Grid.Column="1" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="Start" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Subtract_Item" />
+                            <Label x:Name="Item6Quantity" Text="0" Grid.Column="2" HorizontalOptions="Center"/>
+                            <Button x:Name="Item6Inc" Text="+" TextColor="White" Padding="0" Grid.Column="3" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Add_Item"/>
+                        </Grid>
+                        <Grid Padding="0, 10, 0, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Total:" Grid.Column="0"/>
+                            <Label x:Name="Item6Total" Text="0 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="0" Padding="10,10,10,10" ColumnSpacing="10">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="Item7Name" Text="Wine" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16"/>
+
+                    <Frame Grid.Row="1" Grid.Column="0" HasShadow="False" MaximumHeightRequest="120" MaximumWidthRequest="200" Padding="0" CornerRadius="10" IsClippedToBounds="True" HorizontalOptions="Start">
+                        <Image Source="wine.jpg" HeightRequest="120"  Aspect="AspectFill" HorizontalOptions="Start" />
+                    </Frame>
+
+                    <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+
+
+                        <Grid Padding="0,5,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="*" />
+
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Price:" Grid.Column="0" />
+                            <Label x:Name="Item7Price" Text="3 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+
+                        </Grid>
+
+                        <Grid  Padding="0,10,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" Grid.ColumnSpan="3" CornerRadius="5"/>
+                            <Label Grid.Column="0" Text="Quantity:" />
+                            <Button x:Name="Item7Dec" Text="-" TextColor="White" Padding="0" Grid.Column="1" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="Start" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Subtract_Item" />
+                            <Label x:Name="Item7Quantity" Text="0" Grid.Column="2" HorizontalOptions="Center"/>
+                            <Button x:Name="Item7Inc" Text="+" TextColor="White" Padding="0" Grid.Column="3" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Add_Item"/>
+                        </Grid>
+                        <Grid Padding="0, 10, 0, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Total:" Grid.Column="0"/>
+                            <Label x:Name="Item7Total" Text="0 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Grid Grid.Row="3" Grid.Column="0" Padding="10,10,10,10" ColumnSpacing="10">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="Item8Name" Text="Beer" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16"/>
+
+                    <Frame Grid.Row="1" Grid.Column="0" HasShadow="False" MaximumHeightRequest="120" MaximumWidthRequest="200" Padding="0" CornerRadius="10" IsClippedToBounds="True" HorizontalOptions="Start">
+                        <Image Source="beer.jpg" HeightRequest="120"  Aspect="AspectFill" HorizontalOptions="Start" />
+                    </Frame>
+
+                    <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+
+
+                        <Grid Padding="0,5,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="*" />
+
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Price:" Grid.Column="0" />
+                            <Label x:Name="Item8Price" Text="3 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+
+                        </Grid>
+
+                        <Grid  Padding="0,10,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" Grid.ColumnSpan="3" CornerRadius="5"/>
+                            <Label Grid.Column="0" Text="Quantity:" />
+                            <Button x:Name="Item8Dec" Text="-" TextColor="White" Padding="0" Grid.Column="1" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="Start" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Subtract_Item" />
+                            <Label x:Name="Item8Quantity" Text="0" Grid.Column="2" HorizontalOptions="Center"/>
+                            <Button x:Name="Item8Inc" Text="+" TextColor="White" Padding="0" Grid.Column="3" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Add_Item"/>
+                        </Grid>
+                        <Grid Padding="0, 10, 0, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Total:" Grid.Column="0"/>
+                            <Label x:Name="Item8Total" Text="0 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Grid>
+            </Grid>
+
+            <Label Text="Desserts" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Grid RowSpacing="10" ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+
+                </Grid.ColumnDefinitions>
+                <BoxView Opacity="0.2" Grid.Row="0" Grid.Column="0" CornerRadius="10" />
+
+                <BoxView Opacity="0.2" Grid.Row="1" Grid.Column="0" CornerRadius="10"/>
+
+                <BoxView Opacity="0.2" Grid.Row="2" Grid.Column="0" CornerRadius="10"/>
+                <BoxView Opacity="0.2" Grid.Row="3" Grid.Column="0" CornerRadius="10"/>
+
+
+
+                <Grid Grid.Row="0" Grid.Column="0" Padding="10,10,10,10" ColumnSpacing="10">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="Item9Name" Text="Cake" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16"/>
+
+                    <Frame Grid.Row="1" Grid.Column="0" HasShadow="False" MaximumHeightRequest="120" MaximumWidthRequest="200" Padding="0" CornerRadius="10" IsClippedToBounds="True" HorizontalOptions="Start">
+                        <Image Source="cake.jpg" HeightRequest="120"  Aspect="AspectFill" HorizontalOptions="Start" />
+                    </Frame>
+
+
+
+                    <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+
+
+                        <Grid Padding="0,5,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="*" />
+
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Price:" Grid.Column="0" />
+                            <Label x:Name="Item9Price" Text="3 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+
+                        </Grid>
+
+                        <Grid  Padding="0,10,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" Grid.ColumnSpan="3" CornerRadius="5"/>
+                            <Label Grid.Column="0" Text="Quantity:" />
+                            <Button x:Name="Item9Dec" Text="-" TextColor="White" Padding="0" Grid.Column="1" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="Start" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Subtract_Item" />
+                            <Label x:Name="Item9Quantity" Text="0" Grid.Column="2" HorizontalOptions="Center"/>
+                            <Button x:Name="Item9Inc" Text="+" TextColor="White" Padding="0" Grid.Column="3" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Add_Item"/>
+                        </Grid>
+                        <Grid Padding="0, 10, 0, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Total:" Grid.Column="0"/>
+                            <Label x:Name="Item9Total" Text="0 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="0" Padding="10,10,10,10" ColumnSpacing="10">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="Item10Name" Text="Ice Cream" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16"/>
+
+
+                    <Frame Grid.Row="1" Grid.Column="0" HasShadow="False" MaximumHeightRequest="120" MaximumWidthRequest="200" Padding="0" CornerRadius="10" IsClippedToBounds="True" HorizontalOptions="Start">
+                        <Image Source="icecream.jpeg" HeightRequest="120"  Aspect="AspectFill" HorizontalOptions="Start" />
+                    </Frame>
+
+
+
+                    <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+
+
+                        <Grid Padding="0,5,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="*" />
+
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Price:" Grid.Column="0" />
+                            <Label x:Name="Item10Price" Text="2 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+
+                        </Grid>
+
+                        <Grid  Padding="0,10,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" Grid.ColumnSpan="3" CornerRadius="5"/>
+                            <Label Grid.Column="0" Text="Quantity:" />
+                            <Button x:Name="Item10Dec" Text="-" TextColor="White" Padding="0" Grid.Column="1" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="Start" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Subtract_Item" />
+                            <Label x:Name="Item10Quantity" Text="0" Grid.Column="2" HorizontalOptions="Center"/>
+                            <Button x:Name="Item10Inc" Text="+" TextColor="White" Padding="0" Grid.Column="3" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Add_Item"/>
+                        </Grid>
+                        <Grid Padding="0, 10, 0, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Total:" Grid.Column="0"/>
+                            <Label x:Name="Item10Total" Text="0 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="0" Padding="10,10,10,10" ColumnSpacing="10">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="Item11Name" Text="Hot Chocolate" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16"/>
+
+                    <Frame Grid.Row="1" Grid.Column="0" HasShadow="False" MaximumHeightRequest="120" MaximumWidthRequest="200" Padding="0" CornerRadius="10" IsClippedToBounds="True" HorizontalOptions="Start">
+                        <Image Source="hotchocolate.jpg" HeightRequest="120"  Aspect="AspectFill" HorizontalOptions="Start" />
+                    </Frame>
+
+                    <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+
+
+                        <Grid Padding="0,5,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="*" />
+
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Price:" Grid.Column="0" />
+                            <Label x:Name="Item11Price" Text="2 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+
+                        </Grid>
+
+                        <Grid  Padding="0,10,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" Grid.ColumnSpan="3" CornerRadius="5"/>
+                            <Label Grid.Column="0" Text="Quantity:" />
+                            <Button x:Name="Item11Dec" Text="-" TextColor="White" Padding="0" Grid.Column="1" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="Start" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Subtract_Item" />
+                            <Label x:Name="Item11Quantity" Text="0" Grid.Column="2" HorizontalOptions="Center"/>
+                            <Button x:Name="Item11Inc" Text="+" TextColor="White" Padding="0" Grid.Column="3" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Add_Item"/>
+                        </Grid>
+                        <Grid Padding="0, 10, 0, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Total:" Grid.Column="0"/>
+                            <Label x:Name="Item11Total" Text="0 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Grid Grid.Row="3" Grid.Column="0" Padding="10,10,10,10" ColumnSpacing="10">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="Item12Name" Text="Flan" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16"/>
+
+                    <Frame Grid.Row="1" Grid.Column="0" HasShadow="False" MaximumHeightRequest="120" MaximumWidthRequest="200" Padding="0" CornerRadius="10" IsClippedToBounds="True" HorizontalOptions="Start">
+                        <Image Source="flan.jpg" HeightRequest="120"  Aspect="AspectFill" HorizontalOptions="Start" />
+                    </Frame>
+
+                    <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+
+
+                        <Grid Padding="0,5,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="*" />
+
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Price:" Grid.Column="0" />
+                            <Label x:Name="Item12Price" Text="3 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+
+                        </Grid>
+
+                        <Grid  Padding="0,10,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" Grid.ColumnSpan="3" CornerRadius="5"/>
+                            <Label Grid.Column="0" Text="Quantity:" />
+                            <Button x:Name="Item12Dec" Text="-" TextColor="White" Padding="0" Grid.Column="1" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="Start" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Subtract_Item" />
+                            <Label x:Name="Item12Quantity" Text="0" Grid.Column="2" HorizontalOptions="Center"/>
+                            <Button x:Name="Item12Inc" Text="+" TextColor="White" Padding="0" Grid.Column="3" FontSize="14" MinimumHeightRequest="15" MinimumWidthRequest="15" HeightRequest="15" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" CornerRadius="5" BackgroundColor="Transparent" BorderWidth="0" Clicked="Add_Item"/>
+                        </Grid>
+                        <Grid Padding="0, 10, 0, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Column="1" CornerRadius="5"/>
+                            <Label Text="Total:" Grid.Column="0"/>
+                            <Label x:Name="Item12Total" Text="0 USD" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Grid>
+            </Grid>
+            <Grid Padding="0,0,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+                <BoxView Opacity="0.2" Grid.Row="0" Grid.Column="0" CornerRadius="10" />
+                <Grid Grid.Row="3" Grid.Column="0" Padding="10,10,10,10" ColumnSpacing="10">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25" />
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Text="Cart Total:" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16"/>
+                    
+                    <BoxView Opacity="0.3" Color="#EEEEEE" Grid.Row="1" Grid.Column="0" CornerRadius="5"/>
+                    <Label x:Name="finalTotal" Padding="0,0,0,0" Text="0 USD" Grid.Row="1" Grid.Column="0"  FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Button x:Name="ContinueButton" MinimumHeightRequest="35" HeightRequest="35" Text="Place Order" TextColor="White" Padding="0" Grid.Row="1" Grid.Column="1" FontSize="16" BackgroundColor="#59C395" HorizontalOptions="FillAndExpand" VerticalOptions="Center" CornerRadius="5" BorderWidth="1" BorderColor="#59C395" Clicked="Prepare_Order_Details" >
+                    </Button>
+                </Grid>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
