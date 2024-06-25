@@ -19,11 +19,12 @@ Menu presented to the user for placing orders:
 ![image](https://github.com/imkprakash/food-ordering-app/assets/76038244/6c589e83-1ffa-4a70-b1f0-1a76a2dff2e5)
 
 
+User is given option to place order at the end along with total amount that is to be paid.
 ![image](https://github.com/imkprakash/food-ordering-app/assets/76038244/33c55177-5647-4b72-bb2f-d9bc26580386)
 
 
 
-User is given option to place order at the end along with total amount that is to be paid.
+Details of the order placed by the user:
 
 ![image](https://github.com/imkprakash/food-ordering-app/assets/76038244/44221397-481b-4c7d-87fa-3b62edfbd4c6)
 
